@@ -65,7 +65,7 @@ class Database {
     public function update($query) {
         $update_row = $this->link->query($query) or die($this->link->error . __LINE__);
         
-        // Validate Insert
+        // Validate Update
         if($update_row) {
             header("Location: index.php?msg=".urlencode('Record Updated'));
             exit();
@@ -80,7 +80,7 @@ class Database {
     public function delete($query) {
         $delete_row = $this->link->query($query) or die($this->link->error . __LINE__);
         
-        // Validate Insert
+        // Validate Deletion
         if($delete_row) {
             header("Location: index.php?msg=".urlencode('Record Deleted'));
             exit();
